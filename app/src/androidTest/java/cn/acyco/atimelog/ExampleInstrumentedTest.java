@@ -1,4 +1,4 @@
-package cn.acyco.acycotimelog;
+package cn.acyco.atimelog;
 
 import android.content.Context;
 
