@@ -16,8 +16,6 @@ public class EventLogBean {
     private String type; //类别
     private String note; //注释 or 备注
     private String duration; //持续时间
-    private static SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    private static SimpleDateFormat mTimeFormat = new SimpleDateFormat("HH:mm:ss");
 
     public EventLogBean(long id, String event, Date startTime, Date endTime, String type, String duration, String note) {
         this.id = id;
@@ -62,7 +60,7 @@ public class EventLogBean {
         if (null == this.startTime) {
             return "StartDate";
         } else {
-            return mDateFormat.format(this.startTime);
+            return Canstant.DATEFORMAT.format(this.startTime);
         }
     }
 
@@ -70,7 +68,7 @@ public class EventLogBean {
         if (null == this.startTime) {
             return "StartTime";
         } else {
-            return mTimeFormat.format(this.startTime);
+            return Canstant.TIMEFORMAT.format(this.startTime);
         }
     }
 
@@ -82,7 +80,7 @@ public class EventLogBean {
         if (null == this.endTime) {
             return "EndDate";
         } else {
-            return mDateFormat.format(this.endTime);
+            return Canstant.DATEFORMAT.format(this.endTime);
         }
     }
 
@@ -90,7 +88,7 @@ public class EventLogBean {
         if (null == this.endTime) {
             return "EndTime";
         } else {
-            return mTimeFormat.format(this.endTime);
+            return Canstant.TIMEFORMAT.format(this.endTime);
         }
     }
 
@@ -117,7 +115,7 @@ public class EventLogBean {
     public String getDuration() {
 
         StringBuilder sb = new StringBuilder();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         sb.append(dateFormat.format(this.startTime)); //
 
         if (null == this.endTime) { //如果没结束时间 持续时间就是开始时间

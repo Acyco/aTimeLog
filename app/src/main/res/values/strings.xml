@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">aTimeLog</string>
+    <string name="doing_now">What are you doing now?</string>
 </resources>
